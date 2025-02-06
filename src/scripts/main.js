@@ -3,8 +3,10 @@
 const rows = document.querySelectorAll('tr');
 
 for (const row of rows) {
-  const clone = row.children[1].cloneNode(true);
+  if (row.children.length === 5) {
+    const clone = row.children[1].cloneNode(true);
 
-  row.append(clone);
-  row.append(row.children[4]);
+    row.append(clone);
+    row.append(row.children[4]);
+  }
 }
